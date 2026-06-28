@@ -1,49 +1,31 @@
-const langBtn = document.getElementById("langBtn");
-const menu = document.getElementById("menu");
 const burger = document.getElementById("burger");
+const nav = document.getElementById("nav");
+const lang = document.getElementById("lang");
 
-let lang = "en";
-
-const dict = {
-en:{
-home:"Home",
-about:"About",
-projects:"Projects",
-contact:"Contact",
-title:"Full Stack Web Developer",
-subtitle:"Building fast, scalable & modern web apps",
-about_en:"I am a full-stack developer focused on modern scalable apps.",
-about_fa:"من یک توسعه‌دهنده فول استک هستم که روی ساخت سیستم‌های مدرن تمرکز دارم."
-},
-fa:{
-home:"خانه",
-about:"درباره",
-projects:"پروژه‌ها",
-contact:"تماس",
-title:"توسعه‌دهنده فول استک",
-subtitle:"ساخت اپلیکیشن‌های سریع و مدرن",
-about_en:"I am a full-stack developer focused on modern scalable apps.",
-about_fa:"من یک توسعه‌دهنده فول استک هستم که روی ساخت سیستم‌های مدرن تمرکز دارم."
-}
-};
-
-langBtn.onclick=()=>{
-lang = lang==="en"?"fa":"en";
-langBtn.innerText = lang==="en"?"FA":"EN";
-
-document.querySelectorAll("[data-i18n]").forEach(el=>{
-let key = el.getAttribute("data-i18n");
-if(dict[lang][key]) el.innerText = dict[lang][key];
+burger?.addEventListener("click",()=>{
+nav.style.display = nav.style.display==="flex"?"none":"flex";
 });
-};
 
-burger.onclick=()=>{
-menu.classList.toggle("active");
-};
+/* scroll reveal */
+const observer = new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("active");
+}
+});
+},{threshold:0.1});
 
-/* smooth scroll feel */
-document.querySelectorAll("a").forEach(a=>{
-a.addEventListener("click",()=>{
-menu.classList.remove("active");
+document.querySelectorAll(".reveal").forEach(el=>{
+observer.observe(el);
+});
+
+/* simple lang toggle (demo lightweight) */
+let isFA = false;
+
+lang?.addEventListener("click",()=>{
+isFA = !isFA;
+lang.innerText = isFA ? "EN" : "FA";
+document.querySelectorAll(".fa").forEach(el=>{
+el.style.display = isFA ? "block" : "none";
 });
 });
