@@ -1,11 +1,13 @@
 <?php
-$host     = 'https://jdoftcwahignczzlzzri.supabase.co/rest/v1/'; 
-$port     = '6543'; 
-$db       = 'mohammadreza-portfolio'; 
-$user     = 'mohammadreza-portfolio'; 
+// اطلاعات دیتابیس آنلاین Supabase شما
+$host     = 'aws-0-eu-central-1.pooler.supabase.com'; // همان آدرسی که در پنل داری
+$port     = '5432'; // تغییر پورت به 5432 برای اتصال مستقیم و پایداری بیشتر
+$db       = 'postgres'; 
+$user     = 'postgres'; 
 $password = '@Cmamad5111'; 
 
-$dsn = "pgsql:host=$host;port=$port;dbname=$db;";
+// اضافه کردن پارامترهای SSL به رشته اتصال برای جلوگیری از خطای سرور
+$dsn = "pgsql:host=$host;port=$port;dbname=$db;sslmode=require;";
 
 $options = [
     PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
@@ -15,8 +17,8 @@ $options = [
 
 try {
      $pdo = new PDO($dsn, $user, $password, $options);
-    
+     // اتصال با موفقیت برقرار شد!
 } catch (\PDOException $e) {
-     throw new \PDOException($e->getMessage(), (int)$e->getCode());
+     die("خطا در اتصال به دیتابیس ابری: " . $e->getMessage());
 }
 ?>
