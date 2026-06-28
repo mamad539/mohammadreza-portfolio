@@ -1,31 +1,33 @@
-const burger = document.getElementById("burger");
-const nav = document.getElementById("nav");
-const lang = document.getElementById("lang");
+const cursor = document.querySelector(".cursor");
 
-burger?.addEventListener("click",()=>{
-nav.style.display = nav.style.display==="flex"?"none":"flex";
+document.addEventListener("mousemove",(e)=>{
+cursor.style.left = e.clientX + "px";
+cursor.style.top = e.clientY + "px";
 });
 
-/* scroll reveal */
+/* parallax mouse effect */
+document.addEventListener("mousemove",(e)=>{
+document.querySelectorAll(".blob").forEach(blob=>{
+const speed = 0.02;
+const x = (window.innerWidth - e.pageX)*speed;
+const y = (window.innerHeight - e.pageY)*speed;
+blob.style.transform = `translate(${x}px, ${y}px)`;
+});
+});
+
+/* smooth reveal */
 const observer = new IntersectionObserver(entries=>{
 entries.forEach(entry=>{
 if(entry.isIntersecting){
-entry.target.classList.add("active");
+entry.target.style.opacity = 1;
+entry.target.style.transform = "translateY(0)";
 }
 });
-},{threshold:0.1});
+});
 
-document.querySelectorAll(".reveal").forEach(el=>{
+document.querySelectorAll(".card, h2, p").forEach(el=>{
+el.style.opacity = 0;
+el.style.transform = "translateY(30px)";
+el.style.transition = "0.6s";
 observer.observe(el);
-});
-
-/* simple lang toggle (demo lightweight) */
-let isFA = false;
-
-lang?.addEventListener("click",()=>{
-isFA = !isFA;
-lang.innerText = isFA ? "EN" : "FA";
-document.querySelectorAll(".fa").forEach(el=>{
-el.style.display = isFA ? "block" : "none";
-});
 });
