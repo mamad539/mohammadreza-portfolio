@@ -4,59 +4,43 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-<title>Mohammadreza | Max Portfolio</title>
+<title>Mohammadreza | Industry Portfolio</title>
 
 <link rel="stylesheet" href="style.css"/>
 </head>
 
 <body>
 
-<div class="cursor"></div>
-<div class="bg"></div>
+<div id="cursor"></div>
+<div id="webgl"></div>
 
 <header class="nav">
   <div class="logo">MR</div>
-
   <nav>
-    <a href="#home">Home</a>
-    <a href="#projects">Projects</a>
+    <a href="#hero">Home</a>
+    <a href="#about">About</a>
+    <a href="#work">Work</a>
     <a href="#contact">Contact</a>
   </nav>
 </header>
 
-<section id="home" class="hero">
-  <div class="blob b1"></div>
-  <div class="blob b2"></div>
-
-  <h1 class="title">Full Stack Developer</h1>
-  <p>Building premium web experiences</p>
-
-  <div class="cta">
-    <a href="#projects">Work</a>
-    <a class="ghost" href="#contact">Hire Me</a>
-  </div>
+<section id="hero" class="section hero">
+  <h1>Full Stack Developer</h1>
+  <p>Building scalable digital experiences</p>
 </section>
 
-<section id="projects" class="section">
-  <h2>Projects</h2>
+<section id="about" class="section">
+  <h2>About</h2>
+  <p>I build modern web apps with performance & UX focus.</p>
+</section>
+
+<section id="work" class="section">
+  <h2>Selected Work</h2>
 
   <div class="grid">
-
-    <div class="card">
-      <h3>E-commerce</h3>
-      <p>Scalable shop system</p>
-    </div>
-
-    <div class="card">
-      <h3>Blog Engine</h3>
-      <p>SEO optimized platform</p>
-    </div>
-
-    <div class="card">
-      <h3>Dashboard</h3>
-      <p>Admin analytics UI</p>
-    </div>
-
+    <div class="card">E-commerce Platform</div>
+    <div class="card">SaaS Dashboard</div>
+    <div class="card">Blog Engine</div>
   </div>
 </section>
 
@@ -71,8 +55,8 @@
   </form>
 </section>
 
-<footer>© 2026 Mohammadreza</footer>
-
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
 <script src="script.js"></script>
+
 </body>
 </html>
