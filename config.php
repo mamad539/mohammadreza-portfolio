@@ -6,7 +6,6 @@ $db       = 'postgres';
 $user     = 'postgres'; 
 $password = '@Cmamad5111'; 
 
-// اضافه کردن پارامترهای SSL به رشته اتصال برای جلوگیری از خطای سرور
 $dsn = "pgsql:host=$host;port=$port;dbname=$db;sslmode=require;";
 
 $options = [
