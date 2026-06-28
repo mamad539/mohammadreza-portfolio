@@ -1,151 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <title>Mohammadreza | Full Stack Web Developer Portfolio</title>
-  <meta name="description" content="Mohammadreza is a full-stack web developer specializing in modern, scalable, and high-performance web applications." />
-  <meta name="keywords" content="Mohammadreza, Full Stack Developer, Web Developer, PHP, Laravel, JavaScript, Portfolio" />
-  <meta name="author" content="Mohammadreza" />
+<title>Mohammadreza | Full Stack Developer</title>
+<meta name="description" content="Premium portfolio of Mohammadreza - Full Stack Web Developer" />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Mohammadreza | Full Stack Web Developer" />
-  <meta property="og:description" content="Modern portfolio of Mohammadreza - Full Stack Web Developer" />
-  <meta property="og:type" content="website" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-
-  <!-- JSON-LD -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Mohammadreza",
-    "jobTitle": "Full Stack Web Developer",
-    "url": "",
-    "sameAs": [
-      "https://t.me/Dev_Mohammadreza"
-    ]
-  }
-  </script>
-
-  <link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <!-- NAVBAR -->
-  <header class="navbar">
-    <div class="logo">Mohammadreza</div>
 
-    <nav>
-      <a href="#home" data-i18n="nav_home">Home</a>
-      <a href="#about" data-i18n="nav_about">About</a>
-      <a href="#projects" data-i18n="nav_projects">Projects</a>
-      <a href="#contact" data-i18n="nav_contact">Contact</a>
-    </nav>
+<header class="nav">
+  <div class="logo">MR</div>
 
-    <button id="langToggle" class="lang-btn">FA</button>
-  </header>
+  <div class="menu" id="menu">
+    <a href="#home" data-i18n="home">Home</a>
+    <a href="#about" data-i18n="about">About</a>
+    <a href="#projects" data-i18n="projects">Projects</a>
+    <a href="#contact" data-i18n="contact">Contact</a>
+  </div>
 
-  <main>
+  <div class="actions">
+    <button id="langBtn">FA</button>
+    <button class="burger" id="burger">☰</button>
+  </div>
+</header>
 
-    <!-- HERO -->
-    <section id="home" class="hero">
-      <div class="hero-content">
-        <h1 data-i18n="hero_title">Full Stack Web Developer</h1>
-        <p data-i18n="hero_subtitle">
-          Building scalable, modern, high-performance web applications
-        </p>
+<!-- HERO -->
+<section id="home" class="hero">
+  <div class="glow"></div>
 
-        <div class="hero-buttons">
-          <a href="#projects" class="btn primary" data-i18n="btn_projects">View Projects</a>
-          <a href="#contact" class="btn secondary" data-i18n="btn_contact">Contact Me</a>
-        </div>
-      </div>
-      <div class="glow"></div>
-    </section>
+  <h1 data-i18n="title">Full Stack Web Developer</h1>
+  <p data-i18n="subtitle">Building fast, scalable & modern web apps</p>
 
-    <!-- ABOUT -->
-    <section id="about" class="section">
-      <h2 data-i18n="about_title">About Me</h2>
+  <div class="cta">
+    <a href="#projects">View Projects</a>
+    <a href="#contact" class="outline">Contact</a>
+  </div>
+</section>
 
-      <p data-i18n="about_en">
-        I am a full-stack web developer focused on building scalable, modern, and user-friendly web applications.
-      </p>
+<!-- ABOUT -->
+<section id="about" class="section">
+  <h2>About</h2>
 
-      <p data-i18n="about_fa" class="fa-text">
-        من یک توسعه‌دهنده فول استک هستم که روی ساخت وب‌سایت‌های مدرن، سریع و مقیاس‌پذیر تمرکز دارم.
-      </p>
+  <p data-i18n="about_en">
+    I am a full-stack developer focused on modern scalable apps.
+  </p>
 
-      <div class="skills-list">
-        <span>HTML</span>
-        <span>CSS</span>
-        <span>JavaScript</span>
-        <span>PHP</span>
-        <span>Laravel</span>
-        <span>MySQL</span>
-      </div>
-    </section>
+  <p class="fa" data-i18n="about_fa">
+    من یک توسعه‌دهنده فول استک هستم که روی ساخت سیستم‌های مدرن تمرکز دارم.
+  </p>
+</section>
 
-    <!-- SKILLS -->
-    <section class="section">
-      <h2 data-i18n="skills_title">Skills</h2>
+<!-- PROJECTS -->
+<section id="projects" class="section">
+  <h2>Projects</h2>
 
-      <div class="grid">
-        <div class="card">Frontend</div>
-        <div class="card">Backend</div>
-        <div class="card">Database</div>
-        <div class="card">Tools</div>
-      </div>
-    </section>
+  <div class="grid">
 
-    <!-- PROJECTS -->
-    <section id="projects" class="section">
-      <h2 data-i18n="projects_title">Projects</h2>
+    <div class="card">
+      <h3>E-commerce</h3>
+      <p>Full online shop system</p>
+    </div>
 
-      <div class="grid">
-        <div class="card project">
-          <h3 data-i18n="p1_title">E-commerce Platform</h3>
-          <p data-i18n="p1_desc">Full online store system with cart and payment.</p>
-        </div>
+    <div class="card">
+      <h3>Blog System</h3>
+      <p>SEO optimized blog platform</p>
+    </div>
 
-        <div class="card project">
-          <h3 data-i18n="p2_title">Personal Blog System</h3>
-          <p data-i18n="p2_desc">SEO optimized blogging platform.</p>
-        </div>
+    <div class="card">
+      <h3>Dashboard</h3>
+      <p>Admin analytics panel</p>
+    </div>
 
-        <div class="card project">
-          <h3 data-i18n="p3_title">Admin Dashboard</h3>
-          <p data-i18n="p3_desc">Powerful analytics dashboard UI.</p>
-        </div>
-      </div>
-    </section>
+  </div>
+</section>
 
-    <!-- SERVICES -->
-    <section class="section">
-      <h2 data-i18n="services_title">Services</h2>
+<!-- CONTACT -->
+<section id="contact" class="section">
+  <h2>Contact</h2>
 
-      <div class="grid">
-        <div class="card" data-i18n="s1">Web Development</div>
-        <div class="card" data-i18n="s2">Backend Development</div>
-        <div class="card" data-i18n="s3">UI Optimization</div>
-      </div>
-    </section>
+  <form>
+    <input placeholder="Name" required />
+    <input placeholder="Email" required />
+    <textarea placeholder="Message"></textarea>
+    <button type="submit">Send</button>
+  </form>
 
-    <!-- COLLAB -->
-    <section class="section highlight">
-      <h2 data-i18n="collab_title">Let’s Work Together</h2>
-      <p>@Dev_Mohammadreza</p>
-      <a class="btn primary" href="https://t.me/Dev_Mohammadreza">Telegram</a>
-    </section>
-  </main>
+  <p class="telegram">@Dev_Mohammadreza</p>
+</section>
 
-  <footer>
-    <p>© 2026 Mohammadreza. All rights reserved.</p>
-  </footer>
+<footer>
+  © 2026 Mohammadreza
+</footer>
 
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
